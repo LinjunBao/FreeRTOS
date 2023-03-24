@@ -52,7 +52,7 @@ defined in this file. */
 
 /* Set mainCREATE_SIMPLE_BLINKY_DEMO_ONLY to one to run the simple blinky demo,
 or 0 to run the more comprehensive test and demo application. */
-#define mainCREATE_SIMPLE_BLINKY_DEMO_ONLY	0
+#define mainCREATE_SIMPLE_BLINKY_DEMO_ONLY	1
 
 /*-----------------------------------------------------------*/
 
@@ -128,17 +128,17 @@ GPIO_InitTypeDef  GPIO_InitStruct;
 
 	/* Enable GPIOB  Clock (to be able to program the configuration
 	registers) and configure for LED output. */
-	__GPIOG_CLK_ENABLE();
-	__HAL_RCC_GPIOF_CLK_ENABLE();
+	__GPIOK_CLK_ENABLE();
+	__HAL_RCC_GPIOK_CLK_ENABLE();
 
-	GPIO_InitStruct.Pin = GPIO_PIN_10;
+	GPIO_InitStruct.Pin = GPIO_PIN_7;
 	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
 	GPIO_InitStruct.Pull = GPIO_PULLUP;
 	GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
-	HAL_GPIO_Init( GPIOF, &GPIO_InitStruct );
+	HAL_GPIO_Init( GPIOK, &GPIO_InitStruct );
 
 	/* MCO2 : Pin PC9 */
-	HAL_RCC_MCOConfig( RCC_MCO2, RCC_MCO2SOURCE_SYSCLK, RCC_MCODIV_1 );
+	//HAL_RCC_MCOConfig( RCC_MCO2, RCC_MCO2SOURCE_SYSCLK, RCC_MCODIV_1 );
 }
 /*-----------------------------------------------------------*/
 
